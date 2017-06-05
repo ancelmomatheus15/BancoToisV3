@@ -14,6 +14,7 @@ public class Conta {
 	private String nome = "";
 	private String CPF = "";
 	private String RG = "";
+	private double saldo = 0;
 	
 	@NotEmpty(message="Selecione uma opção")
 	private String emprego = "";
@@ -87,5 +88,15 @@ public class Conta {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
+
+	public double getSaldo() {
+		return saldo;
+	}
+
+	public void setSaldo(double saldo) {
+		this.saldo = saldo;
+	}
+	
+	
 
 }

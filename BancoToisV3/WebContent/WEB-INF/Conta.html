@@ -10,9 +10,9 @@
 </h:head>
 <h:body>
 
-	<p:outputLabel value="Bem vindo #{contaMB.conta.usuario.nome} !" />
+	<p:outputLabel value="Bem vindo #{contaMB.curConta.nome} !" />
 	<br />
-	<p:outputLabel value="Saldo: #{contaMB.conta.saldo}" />
+	<p:outputLabel value="Saldo: #{contaMB.curConta.saldo}" />
 	
 	<p:outputLabel for="labelNome" value="Correntista:" />
 	<p:inputText id="labelNome" value="#{contaMB.curConta.nome}" readonly="true" />
