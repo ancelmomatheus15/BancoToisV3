@@ -15,7 +15,7 @@ public class Conta {
 	private String CPF = "";
 	private String RG = "";
 	private double saldo = 0;
-	
+
 	@NotEmpty(message="Selecione uma opção")
 	private String emprego = "";
 	
@@ -24,6 +24,7 @@ public class Conta {
 	
 	@NotEmpty(message="Escolha uma senha")
 	private String senha = "";
+	//------------------------------------------------
 
 	public String getAgencia() {
 		return agencia;
@@ -79,14 +80,6 @@ public class Conta {
 
 	public void setTipoConta(String tipoConta) {
 		this.tipoConta = tipoConta;
-	}
-
-	public String getSenha() {
-		return senha;
-	}
-
-	public void setSenha(String senha) {
-		this.senha = senha;
 	}
 
 	public double getSaldo() {

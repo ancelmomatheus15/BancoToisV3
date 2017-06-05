@@ -17,11 +17,11 @@ private static final long serialVersionUID = -2332229583990843261L;
 public void afterPhase(PhaseEvent ev) {
 	FacesContext fc = ev.getFacesContext();
 	String pagina = fc.getViewRoot().getViewId();
-	if (!"/Home.xhtml".equals(pagina)) { 
+	if (!"/Login.xhtml".equals(pagina)) { 
 		Application app = fc.getApplication();
 		
 		Conta user = app.evaluateExpressionGet(fc, 
-				"#{ContaMB.usuarioAtual}", Conta.class);
+				"#{ContaMB.curConta}", Conta.class);
 		if (user == null) { 
 			NavigationHandler nav = app.getNavigationHandler();
 			nav.handleNavigation(fc, null, "login?faces-redirect=true");

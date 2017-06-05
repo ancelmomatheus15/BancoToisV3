@@ -16,13 +16,13 @@
 			<p:outputLabel for="inputConta" value="Conta: " indicateRequired="true"
 				requiredMessage="Preencha com o numero da conta" />
 			<p:inputText id="inputConta"
-				value="#{contaMB.conta.contaUsuario.conta}"></p:inputText>
+				value="#{contaMB.curConta.conta}"></p:inputText>
 			<p:message for="inputConta" />
 
 
 			<p:outputLabel for="inputSenha" value="Senha: " indicateRequired="true"
 				requiredMessage="Digite sua Senha" />
-			<p:password id="inputSenha" value="#{contaMB.conta.senha}" />
+			<p:password id="inputSenha" value="#{contaMB.curConta.senha}" />
 			<p:message for="inputSenha" />
 			
 		</p:panelGrid>
