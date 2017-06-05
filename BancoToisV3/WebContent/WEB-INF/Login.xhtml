@@ -1,11 +1,37 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>Insert title here</title>
-</head>
-<body>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Banco Tois - Login</title>
+</h:head>
+<h:body>
+	<h3>Login</h3>
+	<h:form>
+		<p:panelGrid columns="3">
 
-</body>
+			<p:outputLabel for="inputConta" value="Conta: " indicateRequired="true"
+				requiredMessage="Preencha com o numero da conta" />
+			<p:inputText id="inputConta"
+				value="#{contaMB.conta.contaUsuario.conta}"></p:inputText>
+			<p:message for="inputConta" />
+
+
+			<p:outputLabel for="inputSenha" value="Senha: " indicateRequired="true"
+				requiredMessage="Digite sua Senha" />
+			<p:password id="inputSenha" value="#{contaMB.conta.senha}" />
+			<p:message for="inputSenha" />
+			
+		</p:panelGrid>
+		<br />
+		
+		<p:commandButton action="#{contaMB.logar}" value="Login"
+			update="@form" />
+		<p:commandLink value="Nova Conta" action="cadastro"
+			immediate="true" />
+	</h:form>
+</h:body>
 </html>
