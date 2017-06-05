@@ -16,22 +16,20 @@
 			<p:outputLabel for="inputConta" value="Conta: " indicateRequired="true"
 				requiredMessage="Preencha com o numero da conta" />
 			<p:inputText id="inputConta"
-				value="#{contaMB.curConta.conta}"></p:inputText>
+				value="#{contaMB.auxUser}"></p:inputText>
 			<p:message for="inputConta" />
 
 
 			<p:outputLabel for="inputSenha" value="Senha: " indicateRequired="true"
 				requiredMessage="Digite sua Senha" />
-			<p:password id="inputSenha" value="#{contaMB.curConta.senha}" />
+			<p:password id="inputSenha" value="#{contaMB.auxSenha}" />
 			<p:message for="inputSenha" />
 			
 		</p:panelGrid>
 		<br />
 		
-		<p:commandButton action="#{contaMB.logar}" value="Login"
-			update="@form" />
-		<p:commandLink value="Nova Conta" action="cadastro"
-			immediate="true" />
+		<p:commandButton action="#{contaMB.login}" value="Login" update="@form" />
+		<p:commandLink value="Nova Conta" action="Cadastro" immediate="true" />
 	</h:form>
 </h:body>
 </html>

@@ -24,7 +24,7 @@ public class ContaMB {
 		return curConta;
 	}
 
-	public String logar() {
+	public String login() {
 		String pagina = "login";
 		curConta = ContaDAO.validar(auxUser, auxSenha);
 		if (curConta != null) {
@@ -46,6 +46,30 @@ public class ContaMB {
 		curConta = null;
 		return "login";
 		
+	}
+	
+	public String getAuxUser() {
+		return auxUser;
+	}
+
+	public void setAuxUser(String auxUser) {
+		this.auxUser = auxUser;
+	}
+
+	public String getAuxSenha() {
+		return auxSenha;
+	}
+
+	public void setAuxSenha(String auxSenha) {
+		this.auxSenha = auxSenha;
+	}
+
+	public Conta getCurConta() {
+		return curConta;
+	}
+
+	public void setCurConta(Conta curConta) {
+		this.curConta = curConta;
 	}
 
 	
