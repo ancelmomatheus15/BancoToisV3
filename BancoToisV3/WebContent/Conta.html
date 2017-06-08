@@ -9,22 +9,25 @@
 </h:head>
 
 <h:body>
-	<h3>Sua Conta</h3>
+	<h3>Dados da Conta</h3>
 	<h:form>
-	
-		<p:outputLabel value="Bem vindo #{contaMB.curConta.nome} !" />
-		<br />
-		<p:outputLabel value="Saldo: #{contaMB.curConta.saldo}" />
-	
-		<p:outputLabel for="labelNome" value="Correntista:" />
-		<p:inputText id="labelNome" value="#{contaMB.curConta.nome}" readonly="true" />
+		<p:panelGrid columns="2">
 
-		<p:outputLabel for="labelCPF" value="CPF:" />
-		<p:inputText id="labelCPF" value="#{contaMB.curConta.CPF}" readonly="true" />
 	
-		<p:commandButton value="Depositar" action="deposito"/>
-		<p:commandButton value="Transferir" action="transferencia"/>	
+			<p:outputLabel value="Bem vindo #{contaMB.curConta.nome} !" />
+			<p:inputText value="Saldo: #{contaMB.curConta.saldo}" readonly="true" />
 	
-	</h:form>		
+			<p:outputLabel for="labelNome" value="Correntista:" />
+			<p:inputText id="labelNome" value="#{contaMB.curConta.nome}" readonly="true" />
+
+			<p:outputLabel for="labelCPF" value="CPF:" />
+			<p:inputText id="labelCPF" value="#{contaMB.curConta.CPF}" readonly="true" />
+	
+		</p:panelGrid>
+	
+	<p:commandButton value="Depositar" action="deposito"/>
+	<p:commandButton value="Transferir" action="transferencia"/>	
+	
+	</h:form>
 </h:body>
 </html>
