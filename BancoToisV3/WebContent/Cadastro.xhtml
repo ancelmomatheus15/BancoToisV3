@@ -13,7 +13,7 @@
 	<p:separator responsive="true" />
 	<h:form>
 	
-	<p:panelGrid columns="3" responsive="true">
+	<p:panelGrid columns="2" responsive="true">
 		
 		<p:outputLabel for="inputAgencia" value="Agencia:" />
 		<p:inputText id="inputAgencia" value="#{contaMB.curConta.agencia}" readonly="true" />
@@ -21,34 +21,46 @@
 		<p:outputLabel for="inputConta" value="Conta:" indicateRequired="true" />
 		<p:inputText id="inputConta" value="#{contaMB.curConta.conta}" readonly="true" />
 		
+	</p:panelGrid>
+	
+	<p:separator responsive="true" />
+	
+	<p:panelGrid columns="3" responsive="true">
+	
 		<p:outputLabel for="inputNome" value="Nome:" />
 		<p:inputText id="inputNome" value="#{contaMB.curConta.nome}" />
 		<p:message for="inputNome" />
 
 		<p:outputLabel for="inputCPF" value="CPF:" />
-		<p:inputMask id="inputCPF" mask="999.999.999-99" value="#{contaMB.curConta.cpf}" />
+		<p:inputMask id="inputCPF" mask="999.999.999-99" value="#{contaMB.curConta.CPF}" />
 		<p:message for="inputCPF" />
 
 		<p:outputLabel for="inputRG" value="RG:" />
-		<p:inputMask id="inputRG" mask="99.999.999-9" value="#{contaMB.curConta.rg}" />
+		<p:inputMask id="inputRG" mask="99.999.999-9" value="#{contaMB.curConta.RG}" />
 		<p:message for="inputRG" />
-		
-		<p:selectOneRadio id="inputEmprego" value="#{contaMB.curConta.emprego}">
+	
+	</p:panelGrid>
+	
+	<p:separator responsive="true" />
+	
+	<p:outputLabel value="Empregado:" />
+	<p:selectOneRadio id="inputEmprego" value="#{contaMB.curConta.emprego}">
 			<f:selectItem itemValue="S" itemLabel="Sim" />
 			<f:selectItem itemValue="N" itemLabel="Não" />
 		</p:selectOneRadio>
 		<p:message for="inputTipoConta" />
 		
+		<p:outputLabel value="Tipo Conta:" />
 		<p:selectOneRadio id="inputTipoConta" value="#{contaMB.curConta.tipoConta}">
 			<f:selectItem itemValue="Conta Corrente" itemLabel="Conta Corrente" />
 			<f:selectItem itemValue="Conta Poupança" itemLabel="Conta Poupança" />
 		</p:selectOneRadio>
 		<p:message for="inputTipoConta" />
 		
-	</p:panelGrid>
+	<p:separator responsive="true" />
 		
 		
-	<p:panelGrid columns="2" responsive="true">
+	<p:panelGrid columns="3" responsive="true">
 		
 		<p:outputLabel for="inputSenha" value="Senha" />
 			<p:password id="inputSenha" value="#{contaMB.curConta.senha}"
@@ -61,8 +73,8 @@
 	<p:separator responsive="true" />
 	
 	<p:commandButton value="Salvar" action="#{contaMB.salvar}" update="@form" />
-	<p:commandButton value="Cancelar" action="login" immediate="true" />
-		
+	<p:commandButton value="Cancelar" action="Login" immediate="true" />
+	
 	
 	</h:form>
 </h:body>
