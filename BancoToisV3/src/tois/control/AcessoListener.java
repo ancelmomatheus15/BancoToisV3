@@ -15,19 +15,19 @@ private static final long serialVersionUID = -2332229583990843261L;
 
 @Override
 public void afterPhase(PhaseEvent ev) {
-	FacesContext fc = ev.getFacesContext();
-	String pagina = fc.getViewRoot().getViewId();
-	if (!"/Login.xhtml".equals(pagina)) { 
-		Application app = fc.getApplication();
-		
-		Conta user = app.evaluateExpressionGet(fc, 
-				"#{ContaMB.curConta}", Conta.class);
-		if (user == null) { 
-			NavigationHandler nav = app.getNavigationHandler();
-			nav.handleNavigation(fc, null, "login?faces-redirect=true");
-			fc.renderResponse();
-		}
-	}
+//	FacesContext fc = ev.getFacesContext();
+//	String pagina = fc.getViewRoot().getViewId();
+//	if (!"/Login.xhtml".equals(pagina)) { 
+//		Application app = fc.getApplication();
+//		
+//		Conta user = app.evaluateExpressionGet(fc, 
+//				"#{ContaMB.curConta}", Conta.class);
+//		if (user == null) { 
+//			NavigationHandler nav = app.getNavigationHandler();
+//			nav.handleNavigation(fc, null, "login?faces-redirect=true");
+//			fc.renderResponse();
+//		}
+//	}
 }
 
 @Override
