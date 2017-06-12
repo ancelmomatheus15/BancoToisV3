@@ -17,16 +17,15 @@ import tois.entity.Conta;
 @Table(name="transacao")
 public class Transacao {
 	
-	@Id
-	@GeneratedValue
+
 	private String id;
 	private String tipo;
-	@Min(1)
 	private double valor;
 	private String contaOrigem;
 	private String contaDestino;
 	
-	
+	@Id
+	@GeneratedValue
 	public String getId() {
 		return id;
 	}

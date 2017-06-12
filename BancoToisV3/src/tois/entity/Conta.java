@@ -13,8 +13,6 @@ public class Conta {
 	
 	private String agencia = "1507-96";
 	
-	@Id
-	@GeneratedValue
 	private int conta = genNumAcc();
 	private String nome = "";
 	private String CPF = "";
@@ -47,6 +45,8 @@ public class Conta {
 		this.agencia = agencia;
 	}
 
+	@Id
+	@GeneratedValue
 	public int getConta() {
 		return conta;
 	}
