@@ -23,7 +23,7 @@ public class Transacao {
 	private String tipo;
 	@Min(1)
 	private double valor;
-	private Conta contaOrigem;
+	private String contaOrigem;
 	private String contaDestino;
 	
 	
@@ -46,12 +46,10 @@ public class Transacao {
 		this.valor = valor;
 	}
 	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "CONTA_ID")
-	public Conta getContaOrigem() {
+	public String getContaOrigem() {
 		return contaOrigem;
 	}
-	public void setContaOrigem(Conta contaOrigem) {
+	public void setContaOrigem(String contaOrigem) {
 		this.contaOrigem = contaOrigem;
 	}
 	public String getContaDestino() {

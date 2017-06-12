@@ -12,7 +12,7 @@ import tois.entity.Conta;
 public class ContaDAO {
 
 	public static void adicionar(Conta curConta) {
-		EntityManagerFactory factory = Persistence.createEntityManagerFactory("BANCO");
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("BANCOTOIS");
 		EntityManager em = factory.createEntityManager();
 		em.getTransaction().begin();
 		em.persist(curConta);
@@ -23,7 +23,7 @@ public class ContaDAO {
 	}
 
 	public static Conta lerConta(String numConta) {
-		EntityManagerFactory factory = Persistence.createEntityManagerFactory("BANCO");
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("BANCOTOIS");
 		EntityManager em = factory.createEntityManager();
 		Conta c = em.find(Conta.class, numConta);
 		if (c != null) {
@@ -33,7 +33,7 @@ public class ContaDAO {
 	}
 
 	public static void atualizarConta(Conta contaTo) {
-		EntityManagerFactory factory = Persistence.createEntityManagerFactory("BANCO");
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("BANCOTOIS");
 		EntityManager em = factory.createEntityManager();
 		try {
 			em.refresh(contaTo);

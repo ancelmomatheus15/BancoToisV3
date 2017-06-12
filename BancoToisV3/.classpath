@@ -35,5 +35,6 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="lib/hibernate-entitymanager-4.3.8.Final.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

@@ -1,6 +1,8 @@
 package tois.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.NotEmpty;
@@ -10,7 +12,10 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class Conta {
 	
 	private String agencia = "1507-96";
-	private int conta = 0;
+	
+	@Id
+	@GeneratedValue
+	private int conta = genNumAcc();
 	private String nome = "";
 	private String CPF = "";
 	private String RG = "";
@@ -98,6 +103,11 @@ public class Conta {
 		this.saldo = saldo;
 	}
 	
-	
+	public int genNumAcc(){
+		
+		int i = (int) (100000 + Math.random() * 89999l);
+		
+		return i;
+	}
 
 }

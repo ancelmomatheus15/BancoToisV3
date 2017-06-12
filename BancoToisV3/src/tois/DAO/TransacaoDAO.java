@@ -9,7 +9,7 @@ import tois.entity.Transacao;
 public class TransacaoDAO {
 
 	public static void addTransacao(Transacao curTransacao) {
-		EntityManagerFactory factory = Persistence.createEntityManagerFactory("BANCO");
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("BANCOTOIS");
 		EntityManager em = factory.createEntityManager();
 		em.getTransaction().begin();
 		em.persist(curTransacao);

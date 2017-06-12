@@ -5,8 +5,8 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
 	<persistence-unit name="BANCOTOIS" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<class>tois.model.Conta</class>
-		<class>tois.model.Transacao</class>
+		<class>tois.entity.Conta</class>
+		<class>tois.entity.Transacao</class>
 		<properties>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.OracleDialect" />
 			<property name="hibernate.hbm2ddl.auto" value="update" />

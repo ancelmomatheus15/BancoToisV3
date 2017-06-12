@@ -28,7 +28,9 @@ public class TransacaoMB {
 	public void transferir(){
 		FacesContext context = FacesContext.getCurrentInstance();
 		Conta c = (Conta) context.getApplication().evaluateExpressionGet(context, "#{contaMB.conta}", Conta.class);
-		if (curTransacao.getContaOrigem().equals(c)) {
+		String numContaOrigem = String.valueOf(c.getConta());
+		
+		if (curTransacao.getContaOrigem().equals(numContaOrigem)) {
 			//mostrar erro de conta igual
 		} else {
 			
@@ -59,7 +61,7 @@ public class TransacaoMB {
 		c.setSaldo(c.getSaldo() +curTransacao.getValor());
 		ContaDAO.atualizarConta(c);
 		
-		curTransacao.setContaOrigem(c);
+		curTransacao.setContaOrigem(String.valueOf(c.getConta()));
 		curTransacao.setContaDestino(String.valueOf(c.getConta()));
 		curTransacao.setTipo("Depósito");
 		
